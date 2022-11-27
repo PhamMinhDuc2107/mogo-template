@@ -1,0 +1,101 @@
+.quote {
+  background-color: $gray-color;
+  &-container {
+    padding: 6.5rem 0;
+    // @include flexBox(center, space-between);
+  }
+  &-img{
+    @include size(22rem);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+  }
+  &-item {
+    @include flexBox(center, center);
+    padding: 0 5.5rem;
+    &-icon {
+      padding: 4rem;
+      border: 3px solid $third-color;
+      margin-right: 5rem;
+    }
+    &-desc {
+      font-size: 2.4rem;
+      font-family: $secondary-font;
+      color: $text-color;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+      @include textClamp(3);
+    }
+    &-author {
+      font-size: 2.4rem;
+      font-family: $third-font;
+      padding-left: 7rem;
+      position: relative;
+      &::after {
+        content: "";
+        @include size(6rem, 0.4rem);
+        @include absoluteCenter("top");
+        left: 0;
+
+        background-color: $primary-color;
+      }
+    }
+  }
+  &-arrow-icon {
+    font-size: 3.5rem;
+    color: #cccccc;
+    font-weight: 200;
+    cursor: pointer;
+    padding: 1rem 2rem;
+  }
+  @include maxWidth(767px) {
+    &-container {
+      padding: 5rem 0;
+    }
+    &-arrow-icon {
+      display: none;
+    }
+    &-item {
+      padding: 0;
+      flex-direction: column;
+      &-icon {
+        max-width: 50%;
+        padding: 2rem;
+        @include size(10rem);
+        margin:0;
+      }
+      &-desc {
+        font-size: 1.6rem;
+        display: inline-block;
+      }
+      &-author {
+        font-size: 2rem;
+      }
+    }
+    &-info {
+      margin: 0;
+      margin-top: 3rem;
+    }
+  }
+  & .slick-initialized .slick-slide {
+    display: flex;
+  }
+}
+.slick-arrow {
+  font-size: 3.5rem;
+  color: #cccccc;
+  font-weight: 200;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border:none;
+  background-color: transparent;
+  @include absoluteCenter("top");
+  z-index: 999;
+}
+.slick-prev {
+  left: 0
+}
+.slick-next {
+  right:0
+}

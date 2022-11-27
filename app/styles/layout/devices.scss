@@ -1,0 +1,49 @@
+.devices {
+  padding-top: 11rem;
+  background: linear-gradient(
+      to right bottom,
+      rgba(white, 0.7),
+      rgba(white, 0.6)
+    ),
+    url(../images/img-device-bg.png) no-repeat center / cover;
+
+  &-img {
+    position: relative;
+    left: 52%;
+    transform: translateX(-50%);
+    display: inline-block;
+    margin: 0 auto -9.3rem;
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: 5rem;
+    &-img {
+      max-width: 70%;
+      margin-bottom: -7.6rem;
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    &-img {
+      max-width: 70%;
+      margin-bottom: -5.3rem;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    &-img {
+      max-width: 70%;
+      margin-bottom: -4.1rem;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    &-img {
+      max-width: 70%;
+      margin-bottom: -3.9rem;
+    }
+  }
+  @media screen and (max-width: 280px) {
+    &-img {
+      max-width: 70%;
+      margin-bottom: -2.8rem;
+    }
+  }
+}

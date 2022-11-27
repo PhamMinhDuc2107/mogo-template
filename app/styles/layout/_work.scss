@@ -1,0 +1,74 @@
+.work {
+  padding-top: 10rem;
+  &-list {
+    @include flexBox;
+  }
+  &-column {
+    width: 25%;
+    @include size(100%);
+  }
+  &-img {
+    height: 100%;
+    object-fit: cover;
+  }
+  &-item {
+    height: 50%;
+  }
+  &-item--full {
+    height: 100%;
+  }
+  &-content {
+    color: #fff;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  &-content-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  &-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    @include textClamp(1);
+  }
+  &-desc {
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 300;
+    @include textClamp(1);
+  }
+  @include maxWidth(1279px) {
+    &-list {
+      flex-wrap: wrap;
+      overflow: hidden;
+      height: auto;
+    }
+    &-column {
+      width: 50%;
+    }
+    &-img {
+      @include size(100%);
+    }
+    &-item {
+      height: 42rem;
+    }
+    &-item--full {
+      height: 84rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-column {
+      width: 100%;
+    }
+    &-item,
+    &-item--full {
+      height: auto !important;
+    }
+  }
+}
+@include hoverEffect('.work-item', '.work-content', 'false');

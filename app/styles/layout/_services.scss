@@ -1,0 +1,71 @@
+.services {
+  padding: 11rem 0 12rem;
+  background-color: #fff;
+  &-list {
+    @include flexBox(flex-start, space-between, row, wrap);
+    margin-top: 5rem;
+    &:first-of-type {
+      border-bottom: 1px solid $gray-dark-color;
+      padding-bottom: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+  &-item {
+    width: calc(33.3333% - 2.7rem);
+    @include flexBox(flex-start);
+
+    &-icon {
+      width: 3.5rem;
+      color: $third-color;
+      margin: 0 3rem;
+    }
+  }
+  &-info {
+    width: calc(100% - 9.5rem);
+    @include flexBox(flex-start, center, column);
+  }
+  &-title {
+    font: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  &-desc {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $text-color;
+    font-family: $secondary-font;
+    line-height: 1.6;
+  }
+}
+@include maxWidth(767px) {
+  .services {
+    padding: 5rem 0;
+  }
+}
+@include minWidth(1024px) {
+  .services {
+    &-desc {
+      @include textClamp(2);
+    }
+  }
+}
+@include maxWidth(1023px) {
+  .services {
+    &-list {
+      display: block;
+    }
+    &-item {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+    &-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &-desc {
+      @include textClamp(3);
+    }
+  }
+}

@@ -1,0 +1,3 @@
+@function extend($obj,$ext-obj) {
+  @return map-marge($obj,$ext-obj);
+}

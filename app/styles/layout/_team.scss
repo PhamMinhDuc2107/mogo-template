@@ -1,0 +1,118 @@
+.team {
+  padding: 10rem 0;
+  background-color: #fff;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-item {
+  }
+  &-info {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  &-position {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: $text-color;
+  }
+  &-social {
+    @include flexBox(center, center);
+    color: $primary-color !important;
+    &-item {
+      padding: 1.5rem;
+      background-color: $secondary-color;
+      display: block;
+      font-size: 2.5rem;
+      transition: all 0.25s ease-in;
+      width: 5.6rem;
+      &:not(:first-child) {
+        border-left: 1px solid $primary-color;
+      }
+      @include flexBox(center, center);
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-list {
+      margin-left: 0.1rem;
+    }
+    &-img {
+      width: 100%;
+    }
+    @include touchSlider('.team-list', '.team-item', 45%, 1.5rem, 2rem);
+    &-item {
+      margin-left: 0rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-name {
+      font-size: 1.4rem;
+    }
+    &-position {
+      font-size: 1.3rem;
+    }
+    &-social {
+      padding: 0 1rem;
+    }
+    @include touchSlider('.team-list', '.team-item', 65%, 1.5rem, 3rem);
+    &-img {
+      height: 40rem;
+      object-fit: cover;
+      background-position: center;
+    }
+  }
+  @include maxWidth(550px) {
+    & .team-list {
+    grid-auto-columns: 75%; 
+    }
+    &-img {
+      height: 30rem;
+    }
+    &-social-item {
+      padding: 1rem;
+    }
+  }
+  @include maxWidth(400px) {
+    & .team-list {
+      grid-auto-columns: 100%;
+    }
+    &-img {
+      height: 25rem;
+    }
+    &-social-item {
+      padding: 1rem;
+    }
+  }
+  @include maxWidth(350px) {
+    & .team-list {
+      grid-auto-columns: 125%;
+    }
+  }
+}
+@include hoverEffect('.team-main', '.team-content', "true");
+.brand {
+  background-color: $gray-color;
+  text-align: center;
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+  &-img {
+    padding: 7rem 0;
+  }
+  
+}
